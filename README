@@ -1,0 +1,20 @@
+NAME
+
+    jquery.heatmap.js - jQuery heat map plugin
+
+DEMO
+
+    See index.thml
+
+SYNOPSIS
+
+    <script>
+        $(function () {
+            $("table#heatmap").heatmap();
+        });
+    </script>
+
+AUTHOR
+
+    punytan <punytan@gmail.com>
+

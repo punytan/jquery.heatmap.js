@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jquery.heatmap.js demo</title>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.heatmap.js"></script>
+    <script>
+        var gen_table = function () {
+            var td = function () {
+                return $("<td>").addClass("value").append((Math.random() * 1000).toFixed(0));
+            };
+
+            for (var i = 0; i < 15; i++) {
+                $("#heatmap tbody").append(
+                    $("<tr>").append( $("<td>").append(i), td(), td(), td(), td(), td() )
+                );
+            }
+        };
+
+        $(function () {
+            gen_table();
+            $("table#heatmap").heatmap();
+
+            $("#regen").click(function () {
+                $("#heatmap tbody tr").remove();
+                gen_table();
+                $("table#heatmap").heatmap();
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div><a href="#" id="regen">regen table</a></div>
+
+    <div>
+        <table id="heatmap">
+            <thead>
+                <tr> <th>Num</th> <th>Data 1</th> <th>Data 2</th> <th>Data 3</th> <th>Data 4</th> <th>Data 5</th> </tr>
+            </thead>
+
+            <tbody> </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+</html>
+
